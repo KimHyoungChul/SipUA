@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/aa_setting_linear"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/setting_photo_pop_background"
+              android:gravity="center"
+              android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@id/popup_meetting"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginBottom="12.0dip"
+		android:layout_marginLeft="5.0dip"
+		android:layout_marginRight="5.0dip"
+		android:background="@drawable/backround_white"
+		android:clickable="true"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="35.0dip"
+			android:src="@drawable/tab_meeting_before"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="3.0dip"
+			android:text="@string/conference"
+			android:textColor="@color/text_color"
+			android:textSize="12.0sp"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/popup_setting"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginBottom="7.0dip"
+		android:layout_marginLeft="5.0dip"
+		android:layout_marginRight="5.0dip"
+		android:background="@drawable/backround_white"
+		android:clickable="true"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="35.0dip"
+			android:src="@drawable/tab_setting_before"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="3.0dip"
+			android:text="@string/settings"
+			android:textColor="@color/text_color"
+			android:textSize="12.0sp"/>
+	</LinearLayout>
+</LinearLayout>

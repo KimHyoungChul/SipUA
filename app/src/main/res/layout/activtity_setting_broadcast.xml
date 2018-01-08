@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/ddd"/>
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20.0dip"
+		android:layout_marginTop="15.0dip"
+		android:text="action"
+		android:textSize="20.0sp"/>
+
+	<EditText
+		android:id="@id/setting_broadcast_action_down"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10.0dip"
+		android:layout_marginLeft="20.0dip"
+		android:layout_marginRight="20.0dip"
+		android:hint="down"
+		android:inputType="text"/>
+
+	<EditText
+		android:id="@id/setting_broadcast_action_up"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20.0dip"
+		android:layout_marginRight="20.0dip"
+		android:hint="up"
+		android:inputType="text"/>
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20.0dip"
+		android:layout_marginTop="15.0dip"
+		android:text="keycode"
+		android:textSize="20.0sp"/>
+
+	<EditText
+		android:id="@id/setting_broadcast_keycode"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20.0dip"
+		android:layout_marginRight="20.0dip"
+		android:inputType="text"/>
+
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="12.0dip">
+
+		<Button
+			android:id="@id/setting_broadcast_btn_save"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:text="save"/>
+	</RelativeLayout>
+</LinearLayout>

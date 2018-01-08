@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#ffffffff"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:orientation="vertical">
+
+	<RelativeLayout
+		android:id="@id/layout_top"
+		android:layout_width="fill_parent"
+		android:layout_height="60.0dip"
+		android:background="@color/whole_bg"
+		android:gravity="center">
+
+		<TextView
+			android:id="@id/tv_refresh"
+			android:layout_width="wrap_content"
+			android:layout_height="35.0dip"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10.0dip"
+			android:gravity="center"
+			android:text="@string/refresh_btn"
+			android:textColor="@color/black_"/>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_centerInParent="true"
+			android:gravity="center"
+			android:orientation="horizontal"
+			android:padding="10.0dip">
+
+			<TextView
+				android:id="@id/tv_company"
+				android:layout_width="100.0dip"
+				android:layout_height="40.0dip"
+				android:background="@drawable/navbar_tab_left_select"
+				android:gravity="center"
+				android:singleLine="true"
+				android:text="@string/enterprise"
+				android:textColor="@color/black"
+				android:textSize="16.0sp"/>
+
+			<TextView
+				android:id="@id/tv_talkback"
+				android:layout_width="100.0dip"
+				android:layout_height="40.0dip"
+				android:background="@drawable/navbar_tab_right_nor"
+				android:gravity="center"
+				android:singleLine="true"
+				android:text="@string/group"
+				android:textColor="@color/black"
+				android:textSize="16.0sp"/>
+		</LinearLayout>
+
+		<ImageView
+			android:id="@id/add_img"
+			android:layout_width="35.0dip"
+			android:layout_height="35.0dip"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="10.0dip"
+			android:scaleType="fitCenter"
+			android:src="@drawable/navbar_add_nor"
+			android:visibility="gone"/>
+	</RelativeLayout>
+
+	<SearchView
+		android:id="@id/msearch_view"
+		android:layout_width="fill_parent"
+		android:layout_height="50.0dip"
+		android:inputType="textFilter"/>
+
+	<LinearLayout
+		android:id="@id/loadingView"
+		android:layout_width="fill_parent"
+		android:layout_height="30.0dip"
+		android:gravity="center_horizontal"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<ProgressBar
+			android:id="@id/pb_view"
+			android:layout_width="wrap_content"
+			android:layout_height="20.0dip"
+			android:layout_gravity="center_vertical"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="10.0dip"
+			android:gravity="center_vertical"
+			android:text="@string/refresh_state"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/bottomLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"/>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<resources>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16.0dp</dimen>
+	<dimen name="activity_vertical_margin">16.0dp</dimen>
+
+	<dimen name="textSizeLarge">22.0sp</dimen>
+	<dimen name="textSizeMedium">16.0sp</dimen>
+	<dimen name="textSizeMicro">12.0sp</dimen>
+	<dimen name="textSizeMore">18.0sp</dimen>
+	<dimen name="textSizeSmall">14.0sp</dimen>
+	<dimen name="common_button_height">45.0dip</dimen>
+	<dimen name="summary_size">14.0sp</dimen>
+	<dimen name="photo_bottom">11.0dip</dimen>
+	<dimen name="time_right">10.0dip</dimen>
+	<dimen name="time_size">12.0sp</dimen>
+	<dimen name="user_state_top">13.0dip</dimen>
+	<dimen name="user_gap">6.0dip</dimen>
+	<dimen name="setting_change_pwd_editsize">15.0sp</dimen>
+
+</resources>

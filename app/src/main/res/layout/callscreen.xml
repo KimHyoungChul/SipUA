@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/bg"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#ff999999"
+              android:gravity="bottom"
+              android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<FrameLayout
+			android:id="@id/callOut"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:visibility="gone">
+
+			<ImageView
+				android:id="@id/image1"
+				android:layout_width="220.0dip"
+				android:layout_height="220.0dip"
+				android:layout_gravity="center"
+				android:scaleType="centerInside"
+				android:src="@drawable/calling_normal1"/>
+
+			<ImageView
+				android:id="@id/image2"
+				android:layout_width="170.0dip"
+				android:layout_height="170.0dip"
+				android:layout_gravity="center"
+				android:scaleType="centerInside"
+				android:src="@drawable/calling_normal2"/>
+
+			<ImageView
+				android:id="@id/image3"
+				android:layout_width="120.0dip"
+				android:layout_height="120.0dip"
+				android:layout_gravity="center"
+				android:scaleType="centerInside"
+				android:src="@drawable/calling_normal3"/>
+		</FrameLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+
+			<FrameLayout
+				android:id="@id/photoUser"
+				android:layout_width="fill_parent"
+				android:layout_height="0.0dip"
+				android:layout_gravity="bottom"
+				android:layout_weight="1.0"
+				android:background="#ff999999">
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_gravity="clip_vertical"
+					android:gravity="bottom">
+
+					<ImageView
+						android:id="@id/user_photo"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"/>
+				</LinearLayout>
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="bottom"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:id="@id/line_outcall"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+
+						<FrameLayout
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content">
+
+							<ImageView
+								android:id="@id/out_end_call"
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:background="@drawable/loginoutstyle"
+								android:gravity="center"
+								android:paddingBottom="15.0dip"
+								android:paddingTop="15.0dip"
+								android:src="@drawable/ic_end_call"/>
+
+							<TextView
+								android:layout_width="fill_parent"
+								android:layout_height="fill_parent"
+								android:gravity="bottom|center"
+								android:text="@string/cancel"
+								android:textColor="#ffffffff"/>
+						</FrameLayout>
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@id/line_incall"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:paddingTop="10.0dip">
+
+						<RelativeLayout
+							android:layout_width="0.0dip"
+							android:layout_height="fill_parent"
+							android:layout_weight="1.0"
+							android:background="#ff990000">
+
+							<FrameLayout
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content">
+
+								<ImageView
+									android:id="@id/end_call"
+									android:layout_width="fill_parent"
+									android:layout_height="wrap_content"
+									android:layout_gravity="center"
+									android:background="@drawable/loginoutstyle"
+									android:gravity="center"
+									android:paddingBottom="15.0dip"
+									android:paddingTop="15.0dip"
+									android:src="@drawable/ic_end_call"/>
+
+								<TextView
+									android:layout_width="fill_parent"
+									android:layout_height="fill_parent"
+									android:gravity="bottom|center"
+									android:text="@string/decline"
+									android:textColor="#ffffffff"/>
+							</FrameLayout>
+						</RelativeLayout>
+
+						<RelativeLayout
+							android:layout_width="0.0dip"
+							android:layout_height="fill_parent"
+							android:layout_weight="1.0"
+							android:background="@color/holo_blue_light">
+
+							<FrameLayout
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content">
+
+								<ImageView
+									android:id="@id/sms_answer"
+									android:layout_width="fill_parent"
+									android:layout_height="wrap_content"
+									android:layout_gravity="center"
+									android:background="@color/holo_blue_light"
+									android:gravity="center"
+									android:paddingBottom="35.0dip"
+									android:paddingTop="15.0dip"
+									android:src="@drawable/tab_mesage_down"/>
+
+								<TextView
+									android:layout_width="fill_parent"
+									android:layout_height="fill_parent"
+									android:gravity="bottom|center"
+									android:text="@string/sms_answer"
+									android:textColor="#ffffffff"/>
+							</FrameLayout>
+						</RelativeLayout>
+
+						<RelativeLayout
+							android:layout_width="0.0dip"
+							android:layout_height="fill_parent"
+							android:layout_weight="1.0"
+							android:background="#ff5e5e5e">
+
+							<FrameLayout
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content">
+
+								<ImageView
+									android:id="@id/accept_call"
+									android:layout_width="fill_parent"
+									android:layout_height="wrap_content"
+									android:layout_gravity="center"
+									android:background="@drawable/call_end_call_view_background"
+									android:gravity="center"
+									android:paddingBottom="15.0dip"
+									android:paddingTop="15.0dip"
+									android:src="@drawable/ic_camera_call"/>
+
+								<TextView
+									android:layout_width="fill_parent"
+									android:layout_height="fill_parent"
+									android:gravity="bottom|center"
+									android:text="@string/accept"
+									android:textColor="#ffffffff"/>
+							</FrameLayout>
+						</RelativeLayout>
+					</LinearLayout>
+				</LinearLayout>
+			</FrameLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="top"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ff000000"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_weight="1.0"
+					android:orientation="vertical">
+
+					<TextView
+						android:id="@id/callname"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:layout_weight="1.0"
+						android:gravity="bottom|center|left"
+						android:maxWidth="25.0dip"
+						android:paddingLeft="20.0dip"
+						android:singleLine="true"
+						android:textColor="#ffffffff"
+						android:textSize="20.0dip"/>
+
+					<TextView
+						android:id="@id/callnum"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:layout_weight="1.0"
+						android:gravity="center|left|top"
+						android:maxWidth="25.0dip"
+						android:paddingLeft="20.0dip"
+						android:singleLine="true"
+						android:textColor="#ffffffff"
+						android:textSize="20.0dip"/>
+				</LinearLayout>
+
+				<Chronometer
+					android:id="@id/elapsedTime"
+					android:layout_width="fill_parent"
+					android:layout_height="60.0dip"
+					android:layout_weight="2.0"
+					android:gravity="center|right"
+					android:paddingRight="20.0dip"
+					android:textColor="#ffffffff"
+					android:textSize="20.0dip"/>
+			</LinearLayout>
+
+			<TextView
+				android:id="@id/calltip"
+				android:layout_width="fill_parent"
+				android:layout_height="50.0dip"
+				android:background="@color/holo_blue_light"
+				android:ellipsize="marquee"
+				android:focusable="true"
+				android:focusableInTouchMode="true"
+				android:gravity="center"
+				android:marqueeRepeatLimit="marquee_forever"
+				android:paddingLeft="5.0dip"
+				android:paddingRight="5.0dip"
+				android:scrollHorizontally="true"
+				android:singleLine="true"
+				android:textColor="#ffffffff"
+				android:textSize="25.0sp"/>
+		</LinearLayout>
+
+		<View
+			android:id="@id/screen_off_view"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ff000000"
+			android:visibility="gone"/>
+	</FrameLayout>
+</LinearLayout>

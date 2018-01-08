@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="0.0dip"
+              android:background="@drawable/no"
+              android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_marginTop="0.0dip"
+			android:background="@drawable/dialogtitle"
+			android:gravity="center">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="月剩余流量预警"
+				android:textColor="#ffffffff"
+				android:textSize="16.0dip"
+				android:textStyle="bold"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_marginTop="0.0dip"
+			android:background="@drawable/dialogtxt"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="220.0dip"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="4.0dip"
+				android:layout_marginRight="4.0dip"
+				android:layout_marginTop="5.0dip"
+				android:singleLine="false"
+				android:text="当每月流量达到此设定值时，启动预警"
+				android:textColor="#ff000000"/>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="剩余流量为(M):"
+					android:textColor="#ff000000"/>
+
+				<EditText
+					android:id="@id/edittxt"
+					android:layout_width="80.0dip"
+					android:layout_height="33.0dip"
+					android:inputType="numberDecimal"
+					android:textSize="13.0sp"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="8.0dip"
+				android:layout_marginTop="8.0dip">
+
+				<ImageButton
+					android:id="@id/confrim"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1.0"
+					android:background="@drawable/camera_okbtn_style"/>
+
+				<ImageButton
+					android:id="@id/cancel"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="30.0dip"
+					android:layout_weight="1.0"
+					android:background="@drawable/camera_nobtn_style"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

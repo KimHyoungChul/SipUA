@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="300.0dip"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/background_sytle3"
+              android:padding="5.0dip">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical"
+		android:padding="3.0dip">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ff960807"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@id/title_tv"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="5.0dip"
+				android:gravity="center"
+				android:padding="5.0dip"
+				android:text="@string/information"
+				android:textColor="@color/white"
+				android:textSize="25.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:weightSum="7.0">
+
+			<TextView
+				android:id="@id/msg_tv"
+				android:layout_width="0.0dip"
+				android:layout_height="wrap_content"
+				android:layout_weight="5.0"
+				android:gravity="left"
+				android:padding="10.0dip"
+				android:text="@string/recording_notify"
+				android:textColor="@color/white"
+				android:textSize="16.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="3.0dip">
+
+			<TextView
+				android:id="@id/cancel_tv"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10.0dip"
+				android:layout_marginLeft="20.0dip"
+				android:layout_marginRight="20.0dip"
+				android:layout_marginTop="10.0dip"
+				android:layout_weight="1.0"
+				android:background="#ff960807"
+				android:gravity="center"
+				android:padding="10.0dip"
+				android:text="@string/cancel"
+				android:textColor="#ffffffff"
+				android:textSize="18.0sp"/>
+
+			<TextView
+				android:id="@id/ok_tv"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10.0dip"
+				android:layout_marginLeft="20.0dip"
+				android:layout_marginRight="20.0dip"
+				android:layout_marginTop="10.0dip"
+				android:layout_weight="1.0"
+				android:background="#fffe0000"
+				android:gravity="center"
+				android:padding="10.0dip"
+				android:text="@string/ok"
+				android:textColor="#ffffffff"
+				android:textSize="18.0sp"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

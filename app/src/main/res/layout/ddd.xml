@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="50.0dip"
+		android:layout_gravity="top"
+		android:background="@color/whole_bg"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageButton
+			android:id="@id/back"
+			android:layout_width="66.0dip"
+			android:layout_height="36.0dip"
+			android:layout_marginLeft="3.0dip"
+			android:visibility="gone"/>
+
+		<LinearLayout
+			android:id="@id/btn_leftbtn"
+			android:layout_width="wrap_content"
+			android:layout_height="52.0dip"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:background="@color/font_color4"
+			android:orientation="horizontal">
+
+			<TextView
+				android:id="@id/left_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginLeft="2.0dip"
+				android:layout_marginRight="5.0dip"
+				android:background="@drawable/map_back_release"/>
+
+			<TextView
+				android:id="@id/t_leftbtn"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:gravity="center"
+				android:paddingRight="15.0dip"
+				android:text="@string/advanced_option"
+				android:textColor="@color/font_color3"
+				android:textSize="15.0sp"/>
+		</LinearLayout>
+
+		<TextView
+			android:id="@id/title"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="8.0dip"
+			android:layout_marginRight="8.0dip"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:singleLine="true"
+			android:text="@string/setting_voice_call"
+			android:textColor="@color/font_color3"
+			android:textSize="20.0dip"/>
+
+		<ImageButton
+			android:id="@id/set_button"
+			android:layout_width="66.0dip"
+			android:layout_height="36.0dip"
+			android:visibility="invisible"/>
+	</LinearLayout>
+</RelativeLayout>

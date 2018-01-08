@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/ddd"/>
+
+	<LinearLayout
+		android:id="@id/phone_type"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:clickable="false"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/vc_type"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/phonetype_value"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/vc_type_2"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/arm_rate"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_ARM"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/rate_value"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="4.75kbit/s"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/ptime"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_PIME"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/ptimevalue"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/audiovad"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_PIME_detection"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/audiovadvalue"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/audiovad_line"
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"
+		tools:ignore="Orientation"/>
+
+	<LinearLayout
+		android:id="@id/aecswitch"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingLeft="10.0dip"
+				android:text="@string/aec_switch"
+				android:textAppearance="?android:textAppearanceMedium"/>
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<com.zed3.utils.SwitchButton
+				android:id="@id/aec_switch"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_gravity="center_vertical"
+				android:layout_marginRight="10.0dip"
+				android:gravity="center_vertical"/>
+		</RelativeLayout>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/voice_large"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_voice_large"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/voice_large_value"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/agcswitch"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingLeft="10.0dip"
+				android:text="@string/agc_switch"
+				android:textAppearance="?android:textAppearanceMedium"/>
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<com.zed3.utils.SwitchButton
+				android:id="@id/agc_switch"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_gravity="center_vertical"
+				android:layout_marginRight="10.0dip"
+				android:gravity="center_vertical"/>
+		</RelativeLayout>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+</LinearLayout>

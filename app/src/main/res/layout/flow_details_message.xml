@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:orientation="vertical"
+              android:paddingBottom="10.0dip"
+              android:paddingLeft="10.0dip"
+              android:paddingRight="10.0dip"
+              android:paddingTop="10.0dip">
+
+	<LinearLayout
+		android:id="@id/total"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="总流量:"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/total_flow"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/total_flow1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/rate_suspension_total"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/total_rate"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@id/video_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="2.0"
+		android:text="@string/rate_suspension_video"
+		android:textColor="@color/holo_blue_light"/>
+
+	<LinearLayout
+		android:id="@id/video_body1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="@string/rate_suspension_send"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/video_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="0.00KB/s "
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:paddingLeft="5.0dip"
+			android:text="@string/rate_suspension_receive"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/video_receive"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@id/voice_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="2.0"
+		android:text="@string/rate_suspension_voice"
+		android:textColor="@color/holo_blue_light"/>
+
+	<LinearLayout
+		android:id="@id/voice_body1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="@string/rate_suspension_send"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/voice_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="0.00KB/s "
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:paddingLeft="5.0dip"
+			android:text="@string/rate_suspension_receive"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/voice_receive"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="0.00KB/s"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@id/gps_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="2.0"
+		android:text="GPS"
+		android:textColor="@color/holo_blue_light"
+		android:visibility="gone"/>
+
+	<LinearLayout
+		android:id="@id/GPS_body"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/rate_suspension_send"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/gps_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s "
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/rate_suspension_receive"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/gps_receive"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@id/sip_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="2.0"
+		android:text="Sip"
+		android:textColor="@color/holo_blue_light"
+		android:visibility="gone"/>
+
+	<LinearLayout
+		android:id="@id/sip_body"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/rate_suspension_send"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/sip_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s "
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/rate_suspension_receive"
+			android:textColor="@color/holo_blue_light"/>
+
+		<TextView
+			android:id="@id/sip_receive"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.00KB/s"
+			android:textColor="@color/holo_blue_light"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/total_flow2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		android:orientation="horizontal"
+		android:visibility="gone">
+
+		<TextView
+			android:id="@id/video_lost"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_weight="2.0"
+			android:text="视频丢包数:"
+			android:textColor="#fffe0b0b"/>
+
+		<TextView
+			android:id="@id/video_lost_count"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textColor="#fffe0b0b"/>
+	</LinearLayout>
+</LinearLayout>

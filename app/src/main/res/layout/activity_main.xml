@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/LinearLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="0.0dip"
+		android:layout_weight="1.0"
+		android:orientation="vertical"/>
+
+	<LinearLayout
+		android:id="@+id/tab_bottm_size"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp"
+		android:layout_margin="0.0dip"
+		android:background="#ffd6d7db"
+		android:baselineAligned="false"
+		android:orientation="horizontal"
+		android:padding="0.0dip">
+
+		<LinearLayout
+			android:id="@+id/tab_contact"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:orientation="vertical"
+			tools:ignore="UseCompoundDrawables">
+
+			<ImageView
+				android:id="@+id/icon_contact"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_marginTop="5.0dip"
+				android:background="@drawable/tab_contact_before"/>
+
+			<TextView
+				android:id="@+id/tab_1_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingBottom="3.0dip"
+				android:text="@string/contact"
+				android:textColor="@color/font_color3"
+				android:textSize="10.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/tab_groupcall"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:orientation="vertical"
+			tools:ignore="UseCompoundDrawables">
+
+			<ImageView
+				android:id="@+id/icon_groupcall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_marginTop="5.0dip"
+				android:background="@drawable/tab_groupcall_before"
+				tools:ignore="ContentDescription"/>
+
+			<TextView
+				android:id="@+id/tab_2_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingBottom="3.0dip"
+				android:text="@string/ptt"
+				android:textColor="@color/font_color3"
+				android:textSize="10.0sp"/>
+		</LinearLayout>
+
+		<FrameLayout
+			android:id="@+id/tab_singlecall"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:gravity="center"
+				android:orientation="vertical"
+				tools:ignore="UseCompoundDrawables">
+
+				<ImageView
+					android:id="@+id/icon_singlecall"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10.0dip"
+					android:layout_marginRight="10.0dip"
+					android:layout_marginTop="5.0dip"
+					android:background="@drawable/tab_singlecall_before"
+					tools:ignore="ContentDescription"/>
+
+				<TextView
+					android:id="@+id/tab_3_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingBottom="3.0dip"
+					android:text="@string/call"
+					android:textColor="@color/font_color3"
+					android:textSize="10.0sp"/>
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+
+				<TextView
+					android:id="@+id/singlecallpoint"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentTop="true"
+					android:background="@drawable/tab_unread_bg"
+					android:gravity="center"
+					android:textColor="@color/tab_wihte"
+					android:textSize="10.0sp"
+					android:visibility="gone"
+					tools:ignore="RtlHardcoded"/>
+			</RelativeLayout>
+		</FrameLayout>
+
+		<FrameLayout
+			android:id="@+id/tab_message"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center">
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:gravity="center"
+				android:orientation="vertical"
+				tools:ignore="UseCompoundDrawables">
+
+				<ImageView
+					android:id="@+id/icon_message"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10.0dip"
+					android:layout_marginRight="10.0dip"
+					android:layout_marginTop="5.0dip"
+					android:background="@drawable/tab_message"
+					tools:ignore="ContentDescription"/>
+
+				<TextView
+					android:id="@+id/tab_4_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingBottom="3.0dip"
+					android:text="@string/message"
+					android:textColor="@color/font_color3"
+					android:textSize="10.0sp"/>
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+
+				<TextView
+					android:id="@+id/msgpoint"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentTop="true"
+					android:background="@drawable/tab_unread_bg"
+					android:gravity="center"
+					android:textColor="@color/tab_wihte"
+					android:textSize="10.0sp"
+					android:visibility="gone"
+					tools:ignore="HardcodedText,RtlHardcoded"/>
+			</RelativeLayout>
+		</FrameLayout>
+
+		<FrameLayout
+			android:id="@+id/tab_photo_transfer"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center">
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<ImageView
+					android:id="@+id/icon_photo_transfer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10.0dip"
+					android:layout_marginRight="10.0dip"
+					android:layout_marginTop="5.0dip"
+					android:background="@drawable/tab_photo_up"/>
+
+				<TextView
+					android:id="@+id/tab_5_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingBottom="3.0dip"
+					android:text="@string/phototransfer"
+					android:textColor="@color/font_color3"
+					android:textSize="10.0sp"/>
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent">
+
+				<TextView
+					android:id="@+id/msgpoint_photo"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentTop="true"
+					android:background="@drawable/tab_unread_bg"
+					android:gravity="center"
+					android:text="18"
+					android:textColor="@color/tab_wihte"
+					android:textSize="10.0sp"
+					android:visibility="gone"/>
+			</RelativeLayout>
+		</FrameLayout>
+
+		<LinearLayout
+			android:id="@+id/tab_meeting"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:orientation="vertical"
+			tools:ignore="UseCompoundDrawables">
+
+			<ImageView
+				android:id="@+id/icon_meeting"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_marginTop="5.0dip"
+				android:background="@drawable/tab_meeting_before"
+				tools:ignore="ContentDescription"/>
+
+			<TextView
+				android:id="@+id/tab_6_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingBottom="3.0dip"
+				android:text="@string/conference"
+				android:textColor="@color/font_color3"
+				android:textSize="10.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/tab_setting"
+			android:layout_width="0.0dip"
+			android:layout_height="fill_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:orientation="vertical"
+			tools:ignore="UseCompoundDrawables">
+
+			<ImageView
+				android:id="@+id/icon_setting"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_marginTop="5.0dip"
+				android:background="@drawable/tab_setting_before"
+				tools:ignore="ContentDescription"/>
+
+			<TextView
+				android:id="@+id/tab_7_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingBottom="3.0dip"
+				android:text="@string/settings"
+				android:textColor="@color/font_color3"
+				android:textSize="10.0sp"/>
+		</LinearLayout>
+
+		<!--<LinearLayout-->
+			<!--android:id="@+id/tab_more"-->
+			<!--android:layout_width="0.0dip"-->
+			<!--android:layout_height="fill_parent"-->
+			<!--android:layout_weight="0.5"-->
+			<!--android:background="@drawable/setting_meetting_selector"-->
+			<!--android:gravity="center"-->
+			<!--android:orientation="vertical"-->
+			<!--android:visibility="gone">-->
+
+			<!--<ImageView-->
+				<!--android:id="@+id/icon_more"-->
+				<!--android:layout_width="wrap_content"-->
+				<!--android:layout_height="wrap_content"-->
+				<!--android:layout_marginLeft="10.0dip"-->
+				<!--android:layout_marginRight="10.0dip"-->
+				<!--android:layout_marginTop="5.0dip"-->
+				<!--android:background="@drawable/setting_meetting_selector"-->
+				<!--android:visibility="gone"/>-->
+
+			<!--<TextView-->
+				<!--android:id="@+id/tab_8_text"-->
+				<!--android:layout_width="wrap_content"-->
+				<!--android:layout_height="wrap_content"-->
+				<!--android:paddingBottom="3.0dip"-->
+				<!--android:text=".\n.\n.\n.\n."-->
+				<!--android:textColor="@color/font_color3"-->
+				<!--android:textSize="10.0sp"-->
+				<!--android:textStyle="bold"/>-->
+		<!--</LinearLayout>-->
+	</LinearLayout>
+</LinearLayout>

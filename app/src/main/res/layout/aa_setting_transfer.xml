@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/aa_setting_linear"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/setting_photo_pop_background2"
+              android:gravity="left"
+              android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@id/Transcribe_but"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginLeft="2.0dip"
+		android:layout_marginTop="2.0dip"
+		android:background="@drawable/backround_white"
+		android:clickable="true"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:id="@id/back_button"
+			android:layout_width="0.0dip"
+			android:layout_height="40.0dip"
+			android:layout_weight="1.0"
+			android:src="@drawable/bu_transcribe"/>
+
+		<TextView
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="3.0dip"
+			android:layout_weight="2.0"
+			android:text="@string/bn_transcrib"
+			android:textColor="@color/text_color"
+			android:textSize="12.0sp"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/popup_setting"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="left"
+		android:layout_marginBottom="6.0dip"
+		android:layout_marginLeft="2.0dip"
+		android:layout_marginRight="5.0dip"
+		android:layout_marginTop="2.0dip"
+		android:background="@drawable/backround_white"
+		android:clickable="true"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="0.0dip"
+			android:layout_height="40.0dip"
+			android:layout_weight="1.0"
+			android:src="@drawable/tab_setting_before"/>
+
+		<TextView
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="3.0dip"
+			android:layout_weight="2.0"
+			android:text="@string/settings"
+			android:textColor="@color/text_color"
+			android:textSize="12.0sp"/>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+	<include
+		android:id="@id/setvideosize"
+		layout="@layout/ddd"/>
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:scrollbars="none">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="6.0dip">
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/carmera_name"
+				android:textSize="18.0sp"/>
+
+			<RadioGroup
+				android:id="@id/maingroup"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<RadioButton
+					android:id="@id/frontcamera"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/setting_carmar_1"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/backcamera"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/setting_carmar_2"/>
+			</RadioGroup>
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8.0dip"
+				android:text="@string/cameracall_usepix"
+				android:textSize="18.0sp"/>
+
+			<RadioGroup
+				android:id="@id/solution_group"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+
+				<RadioButton
+					android:id="@id/rqvga"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/video_cif"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/rvga"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/video_relvga"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/r720p"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/video_720"/>
+			</RadioGroup>
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginLeft="10.0dip"
+				android:orientation="horizontal"
+				android:visibility="gone">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:singleLine="true"
+					android:text="@string/iframe"
+					android:textSize="18.0sp"/>
+
+				<EditText
+					android:id="@id/iframerate"
+					android:layout_width="80.0dip"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="30.0dip"
+					android:gravity="center_vertical"
+					android:inputType="number"
+					android:text="10"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5.0dip"
+					android:gravity="center_vertical"
+					android:text="s"
+					android:textSize="18.0sp"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginTop="10.0dip"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:singleLine="true"
+					android:text="@string/rate"
+					android:textSize="18.0sp"/>
+
+				<EditText
+					android:id="@id/net_rate"
+					android:layout_width="80.0dip"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:layout_marginLeft="52.0dip"
+					android:inputType="number"
+					android:text="2400"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:layout_marginLeft="5.0dip"
+					android:text="kb/s"
+					android:textSize="18.0sp"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginTop="10.0dip"
+				android:orientation="horizontal"
+				android:visibility="gone">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:singleLine="true"
+					android:text="@string/frame_rate"
+					android:textSize="18.0sp"/>
+
+				<EditText
+					android:id="@id/frame_rate"
+					android:layout_width="80.0dip"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:layout_marginLeft="52.0dip"
+					android:inputType="number"
+					android:text="10"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:layout_marginLeft="5.0dip"
+					android:text="f/s"
+					android:textSize="18.0sp"/>
+			</LinearLayout>
+
+			<Button
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_margin="20.0dip"
+				android:gravity="center_horizontal"
+				android:onClick="onSave"
+				android:text="@string/save"/>
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/screen_type"
+				android:textSize="18.0sp"/>
+
+			<RadioGroup
+				android:id="@id/screengroup"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<RadioButton
+					android:id="@id/ver_screen"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="@string/ver"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/hor_screen"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/hor"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/rotate_screen"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/rotate"/>
+			</RadioGroup>
+
+			<LinearLayout
+				android:id="@id/colorcorrect"
+				android:layout_width="fill_parent"
+				android:layout_height="55.0dip"
+				android:background="@android:drawable/list_selector_background"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/color_correct"
+						android:textAppearance="?android:textAppearanceMedium"/>
+				</LinearLayout>
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical">
+
+					<com.zed3.utils.SwitchButton
+						android:id="@id/color_correct"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_gravity="center_vertical"
+						android:layout_marginRight="10.0dip"
+						android:gravity="center_vertical"/>
+				</RelativeLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@id/full_screen"
+				android:layout_width="fill_parent"
+				android:layout_height="55.0dip"
+				android:background="@android:drawable/list_selector_background"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:visibility="gone">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingLeft="10.0dip"
+						android:text="@string/fullscreen_lable"
+						android:textAppearance="?android:textAppearanceMedium"/>
+				</LinearLayout>
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical">
+
+					<com.zed3.utils.SwitchButton
+						android:id="@id/fullscreen_ctrl"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_gravity="center_vertical"
+						android:layout_marginRight="10.0dip"
+						android:gravity="center_vertical"/>
+				</RelativeLayout>
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8.0dip"
+				android:text="@string/allow_lost_level"
+				android:textSize="18.0sp"/>
+
+			<RadioGroup
+				android:id="@id/rg_packetlost"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<RadioButton
+					android:id="@id/one"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="1"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/two"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="2"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/three"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="3"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/four"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="4"/>
+
+				<View
+					android:layout_width="fill_parent"
+					android:layout_height="1.0dip"
+					android:background="?android:listDivider"
+					android:paddingTop="3.0dip"/>
+
+				<RadioButton
+					android:id="@id/five"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="5"/>
+			</RadioGroup>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

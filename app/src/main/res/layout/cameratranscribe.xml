@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ff000000">
+
+	<SurfaceView
+		android:id="@id/localvideoView"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@drawable/setbar_bg"/>
+
+	<RelativeLayout
+		android:id="@id/RelativeLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="60.0dip"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:background="#00000000"
+		android:orientation="vertical">
+
+		<Button
+			android:id="@id/Buttonback"
+			android:layout_width="35.0dip"
+			android:layout_height="35.0dip"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10.0dip"
+			android:background="@drawable/transcribeback"
+			android:visibility="gone"/>
+
+		<LinearLayout
+			android:layout_width="150.0dip"
+			android:layout_height="50.0dip"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:gravity="center_horizontal"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5.0dip"
+				android:text="@string/video_record"
+				android:textColor="#ffee0000"
+				android:textSize="15.0sp"/>
+
+			<Chronometer
+				android:id="@id/call_time"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5.0dip"
+				android:textColor="#ffee0000"
+				android:textSize="10.0sp"/>
+		</LinearLayout>
+
+		<ImageView
+			android:id="@id/buttonvoide"
+			android:layout_width="35.0dip"
+			android:layout_height="34.0dip"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="10.0dip"
+			android:src="@drawable/call_chgcamera0"/>
+	</RelativeLayout>
+
+	<Button
+		android:id="@id/closebtn"
+		android:layout_width="fill_parent"
+		android:layout_height="40.0dip"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="10.0dip"
+		android:layout_marginLeft="20.0dip"
+		android:layout_marginRight="20.0dip"
+		android:background="@drawable/transcribegiveupbutton"
+		android:text="@string/decline"/>
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/ddd"/>
+
+	<LinearLayout
+		android:id="@id/settings_video_connection"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/settings_video_connection"
+			android:textAppearance="?android:textAppearanceMedium"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/LinearLayout1"
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"
+		tools:ignore="Orientation"/>
+
+	<LinearLayout
+		android:id="@id/settings_video_upload"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/settings_video_upload"
+			android:textAppearance="?android:textAppearanceMedium"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/LinearLayout2"
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"
+		tools:ignore="Orientation"/>
+
+	<LinearLayout
+		android:id="@id/settings_video_monitor"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/settings_video_monitor"
+			android:textAppearance="?android:textAppearanceMedium"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/audiovad_line"
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:orientation="horizontal"
+		android:paddingTop="3.0dip"/>
+</LinearLayout>

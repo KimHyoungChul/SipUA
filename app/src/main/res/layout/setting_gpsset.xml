@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/ddd"/>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="#ff999999"
+		android:gravity="center">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="5.0dip"
+			android:layout_marginTop="5.0dip"
+			android:text="@string/setting_position_hint"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/postion_set"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_position_1"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/locatemodetxt"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_position_4"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@id/position_set_line"
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:orientation="horizontal"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/postion_settime"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_position_7"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/settimetxt"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/postion_uploadtime"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:background="@android:drawable/list_selector_background"
+		android:gravity="center_vertical"
+		android:minHeight="?android:listPreferredItemHeight"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:text="@string/setting_position_8"
+			android:textAppearance="?android:textAppearanceMedium"/>
+
+		<TextView
+			android:id="@id/uploadtimetxt"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="10.0dip"
+			android:textAppearance="?android:textAppearanceSmall"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="1.0dip"
+		android:background="?android:listDivider"
+		android:paddingTop="3.0dip"/>
+
+	<LinearLayout
+		android:id="@id/wholepage"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal"/>
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="300.0dip"
+              android:layout_height="200.0dip"
+              android:layout_gravity="center"
+              android:background="@drawable/background_sytle3"
+              android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="4.0"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@id/contact_user_title"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:background="#ff000000"
+				android:gravity="center"
+				android:paddingLeft="15.0dip"
+				android:text="@string/rename"
+				android:textColor="@color/white"
+				android:textSize="20.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="3.0"
+			android:background="#ffffffff"
+			android:orientation="horizontal"
+			android:weightSum="7.0">
+
+			<EditText
+				android:id="@id/contact_user_name"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_marginBottom="20.0dip"
+				android:layout_marginLeft="30.0dip"
+				android:layout_marginRight="30.0dip"
+				android:layout_marginTop="20.0dip"
+				android:layout_weight="2.0"
+				android:background="@drawable/bg_login_et"
+				android:gravity="center|left"
+				android:inputType="textPersonName"
+				android:textColor="#ff000000"
+				android:textSize="20.0sp"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="4.0"
+			android:background="#ff666666"
+			android:orientation="horizontal"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@id/user_save"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_marginBottom="10.0dip"
+				android:layout_marginLeft="20.0dip"
+				android:layout_marginRight="20.0dip"
+				android:layout_marginTop="10.0dip"
+				android:layout_weight="1.0"
+				android:background="#ffc1c1c1"
+				android:gravity="center"
+				android:text="@string/cancel"
+				android:textColor="#ffffffff"
+				android:textSize="18.0sp"/>
+
+			<TextView
+				android:id="@id/user_cancel"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_marginBottom="10.0dip"
+				android:layout_marginLeft="20.0dip"
+				android:layout_marginRight="20.0dip"
+				android:layout_marginTop="10.0dip"
+				android:layout_weight="1.0"
+				android:background="#ffc1c1c1"
+				android:gravity="center"
+				android:text="@string/save"
+				android:textColor="#ffffffff"
+				android:textSize="18.0sp"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

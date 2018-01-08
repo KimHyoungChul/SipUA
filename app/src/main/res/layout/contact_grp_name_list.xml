@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
+
+	<include
+		android:id="@id/member_layout"
+		layout="@layout/contact_item"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"/>
+
+	<RelativeLayout
+		android:id="@id/team_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="55.0dip"
+		android:layout_gravity="center"
+		android:background="@android:color/white"
+		android:gravity="center">
+
+		<TextView
+			android:id="@id/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="10.0dip"
+			android:gravity="center|right"
+			android:text=">"
+			android:textColor="@color/black"
+			android:textSize="15.0sp"/>
+
+		<ImageView
+			android:id="@id/imageicon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5.0dip"
+			android:src="@drawable/iconfont_shousuozhankai"
+			android:visibility="invisible"/>
+
+		<TextView
+			android:id="@id/grp_name"
+			android:layout_width="150.0dip"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5.0dip"
+			android:layout_toRightOf="@id/imageicon"
+			android:ellipsize="end"
+			android:gravity="center|left"
+			android:singleLine="true"
+			android:text="对讲组名称"
+			android:textColor="@color/black"
+			android:textSize="15.0sp"/>
+
+		<LinearLayout
+			android:id="@id/slip_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="55.0dip"
+			android:layout_alignParentRight="true"
+			android:layout_gravity="right"
+			android:layout_toRightOf="@id/grp_name"
+			android:background="@android:color/white"
+			android:gravity="center"
+			android:visibility="gone">
+
+			<Button
+				android:id="@id/rename"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_centerVertical="true"
+				android:layout_weight="1.0"
+				android:background="#ff22dd92"
+				android:text="@string/rename"
+				android:textColor="#ffffffff"
+				android:textSize="15.0sp"/>
+
+			<View
+				android:id="@id/view"
+				android:layout_width="2.0px"
+				android:layout_height="fill_parent"
+				android:background="#ff4a4a4a"/>
+
+			<Button
+				android:id="@id/up"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_centerVertical="true"
+				android:layout_toRightOf="@id/rename"
+				android:layout_weight="1.0"
+				android:background="#ff22dd92"
+				android:text="@string/up"
+				android:textColor="#ffffffff"
+				android:textSize="15.0sp"/>
+
+			<View
+				android:layout_width="2.0px"
+				android:layout_height="fill_parent"
+				android:background="#ff4a4a4a"/>
+
+			<Button
+				android:id="@id/down"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_toRightOf="@id/up"
+				android:layout_weight="1.0"
+				android:background="#ff22dd92"
+				android:gravity="center"
+				android:text="@string/down"
+				android:textColor="#ffffffff"
+				android:textSize="15.0sp"/>
+		</LinearLayout>
+
+		<TextView
+			android:id="@id/grp_count"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@id/grp_name"
+			android:layout_alignBottom="@id/grp_name"
+			android:layout_toLeftOf="@id/icon"
+			android:gravity="center|right"
+			android:text="10000人"
+			android:textColor="@color/black"
+			android:textSize="15.0sp"/>
+	</RelativeLayout>
+</RelativeLayout>

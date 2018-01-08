@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white"
+              android:gravity="center"
+              android:orientation="vertical">
+
+	<include layout="@layout/ddd"/>
+
+	<SearchView
+		android:id="@id/msearch_view"
+		android:layout_width="fill_parent"
+		android:layout_height="50.0dip"
+		android:focusable="false"
+		android:inputType="textFilter"/>
+
+	<View
+		android:layout_width="fill_parent"
+		android:layout_height="0.70000005dip"
+		android:background="@color/black"/>
+
+	<ListView
+		android:id="@id/grp_member_listview"
+		android:layout_width="fill_parent"
+		android:layout_height="0.0dip"
+		android:layout_weight="1.0"
+		android:cacheColorHint="#00000000"
+		android:divider="@color/black"
+		android:dividerHeight="0.70000005dip"
+		android:footerDividersEnabled="true"/>
+
+	<LinearLayout
+		android:id="@id/layout_bottom"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/whole_bg"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:paddingBottom="8.0dip"
+		android:paddingTop="8.0dip">
+
+		<TextView
+			android:id="@id/grp_add"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="15.0dip"
+			android:layout_marginRight="15.0dip"
+			android:layout_weight="1.0"
+			android:drawableTop="@drawable/add_members_nor"
+			android:gravity="center"
+			android:singleLine="true"
+			android:text="@string/custom_grp_add"
+			android:textColor="@color/black"
+			android:textSize="14.0sp"/>
+
+		<TextView
+			android:id="@id/grp_dissolve"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="15.0dip"
+			android:layout_weight="1.0"
+			android:drawableTop="@drawable/dissolve_nor"
+			android:gravity="center"
+			android:singleLine="true"
+			android:text="@string/grp_dissolve"
+			android:textColor="@color/black"
+			android:textSize="14.0sp"/>
+
+		<TextView
+			android:id="@id/grp_delete"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="15.0dip"
+			android:layout_weight="1.0"
+			android:drawableTop="@drawable/delete_members_nor"
+			android:gravity="center"
+			android:singleLine="true"
+			android:text="@string/grp_delete"
+			android:textColor="@color/black"
+			android:textSize="14.0sp"/>
+
+		<TextView
+			android:id="@id/grp_exit"
+			android:layout_width="0.0dip"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="15.0dip"
+			android:layout_weight="1.0"
+			android:drawableTop="@drawable/quit_group_nor"
+			android:gravity="center"
+			android:singleLine="true"
+			android:text="@string/grp_exit"
+			android:textColor="@color/black"
+			android:textSize="15.0sp"/>
+	</LinearLayout>
+</LinearLayout>
