@@ -70,15 +70,474 @@
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
+		android:name="com.zed3.sipua.SipUAApp"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+
 		<activity android:name=".ui.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
+
+		<activity
+			android:name="com.zed3.sipua.ui.DemoCallScreen"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<!--<activity-->
+			<!--android:name="com.zed3.addressbook.AddressBookActivity"-->
+			<!--android:screenOrientation="portrait"-->
+			<!--android:theme="@android:style/Theme.Light.NoTitleBar"/>-->
+		<activity
+			android:name="com.zed3.addressbook.DepartmentActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.addressbook.UserMinuteActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.addressbook.CompanyMemberActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name=".ui.splash.UnionLogin"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<!--<activity-->
+			<!--android:name=".ui.MainDirectoryActivity"-->
+			<!--android:configChanges="locale"-->
+			<!--android:launchMode="singleTask"-->
+			<!--android:screenOrientation="portrait"/>-->
+		<activity
+			android:name="com.zed3.sipua.message.MessageMainActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+		<!--<activity-->
+			<!--android:name="com.zed3.location.googlemap.GoogleLocationOverlay"-->
+			<!--android:configChanges="locale|keyboardHidden|orientation"-->
+			<!--android:screenOrientation="portrait"/>-->
+		<activity
+			android:name="com.zed3.sipua.message.PhotoTransferActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name=".ui.lowsdk.TranscribeActivity"
+			android:configChanges="locale|keyboardHidden|navigation|orientation"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+		<activity
+			android:name="com.zed3.sipua.message.PhotoTransferSentActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.sipua.ui.GrpCallNotify"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Dialog"/>
+		<activity
+			android:name="com.zed3.sipua.ui.UserConfrimActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Dialog"/>
+		<activity
+			android:name="com.zed3.flow.FlowAlarmSet"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Dialog"/>
+		<activity
+			android:name="com.zed3.sipua.welcome.LoginActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.audio.CustomDialog"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name="com.zed3.settings.VideoSelectSettingListActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.sipua.ui.ActvityNotify"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"/>
+		<!--<activity-->
+			<!--android:name="com.zed3.sipua.ui.GroupStateList"-->
+			<!--android:configChanges="locale|keyboardHidden|orientation"-->
+			<!--android:launchMode="singleTask"/>-->
+		<activity
+			android:name="com.zed3.sipua.ui.AutoAnswer"
+			android:configChanges="locale"
+			android:label="@string/app_name"/>
+		<activity
+			android:name="com.zed3.sipua.ui.ChangeAccount"
+			android:configChanges="locale"
+			android:label="@string/app_name"/>
+		<activity
+			android:name="com.zed3.sipua.ui.SettingVideoSize"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:label="@string/phonevideo_setting"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.flow.TotalFlowView"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.sipua.ui.Settings"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:label="@string/app_name"
+			android:taskAffinity=""
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.sipua.ui.SettingNew"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.codecs.Codecs$CodecSettings"
+			android:configChanges="locale"
+			android:label="@string/app_name"
+			android:launchMode="singleTop"
+			android:theme="@android:style/Theme.Light"/>
+
+		<receiver
+			android:name="com.zed3.sipua.message.SmsMmsReceiver"
+			android:enabled="true">
+			<intent-filter>
+				<action android:name="com.zed3.sipua.sms_receive"/>
+				<action android:name="com.zed3.sipua.group_num_type"/>
+				<action android:name="com.zed3.sipua.delivery_report"/>
+				<action android:name="com.zed3.sipua.send_message_ok"/>
+				<action android:name="com.zed3.sipua.mms_receive"/>
+				<action android:name="com.zed3.sipua.mms_offline_space_full"/>
+				<action android:name="com.zed3.sipua.send_message_fail"/>
+				<action android:name="android.intent.action.NUMBER_KEY_PRESSED"/>
+				<action android:name="android.intent.action.LTE_EMERGENCY_CALL"/>
+				<action android:name="com.zed3.sipua.development_interface"/>
+			</intent-filter>
+		</receiver>
+
+		<!--<activity-->
+			<!--android:name="com.zed3.sipua.ui.InCallScreen"-->
+			<!--android:configChanges="locale"-->
+			<!--android:label="@string/app_name"-->
+			<!--android:launchMode="singleInstance"-->
+			<!--android:taskAffinity=""/>-->
+		<activity
+			android:name=".ui.CameraCall"
+			android:configChanges="locale|keyboardHidden|orientation|screenSize"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<!--<activity-->
+			<!--android:name="com.zed3.customgroup.ContactNewActivity"-->
+			<!--android:configChanges="locale|keyboardHidden|orientation"-->
+			<!--android:launchMode="singleTask"-->
+			<!--android:screenOrientation="portrait"/>-->
+		<activity
+			android:name="com.zed3.customgroup.CustomGroupDialogActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Dialog"/>
+		<activity
+			android:name="com.zed3.customgroup.EditGroupMemberActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.customgroup.GroupMemberListAcitivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.sipua.ui.lowsdk.MemberRecordActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+
+		<receiver android:name="com.zed3.zhejiang.ZhejiangReceivier">
+			<intent-filter>
+				<action android:name="com.zed3.sipua.login_gqt"/>
+				<action android:name="com.zed3.sipua.logout"/>
+				<action android:name="com.zed3.sipua.call"/>
+				<action android:name="com.zed3.sipua.group_get"/>
+				<action android:name="com.zed3.sipua.group_change"/>
+				<action android:name="com.zed3.sipua.group_status_get"/>
+				<action android:name="com.zed3.sipua.ptt"/>
+				<action android:name="com.zed3.sipua.group_member_get"/>
+				<action android:name="com.zed3.sipua.ui_groupcall.group_status"/>
+				<action android:name="com.zed3.sipua.setting"/>
+				<action android:name="com.zed3.sipua.sms_sent"/>
+				<action android:name="SEND_MESSAGE_SUCCEED"/>
+				<action android:name="SEND_MESSAGE_FAIL"/>
+				<action android:name="TEXT_MESSAGE_CHANGED"/>
+				<action android:name="com.zed3.sipua.ui_receive_text_message"/>
+				<action android:name="com.zed3.sipua.ui_send_text_message_fail"/>
+				<action android:name="com.zed3.sipua.ui_send_text_message_succeed"/>
+				<action android:name="com.zed3.sipua.all_get"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.zed3.sipua.ui.CameraCallReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.StartDemoCallScreen"/>
+				<action android:name="android.intent.action.RestartUnionLogin"/>
+			</intent-filter>
+		</receiver>
+		<receiver
+			android:name="com.zed3.utils.RestoreReceiver"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="com.zed3.restore"/>
+			</intent-filter>
+		</receiver>
+		<receiver
+			android:name="com.zed3.utils.DestroyAppReceiver"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="com.zed3.sipua.exitAppbroadcast"/>
+			</intent-filter>
+		</receiver>
+		<receiver
+			android:name="com.zed3.media.mediaButton.MediaButtonReceiver"
+			android:enabled="true"
+			android:process="com.zed3.sipua">
+			<intent-filter android:priority="2147483647">
+				<action android:name="android.intent.action.MEDIA_BUTTON"/>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.zed3.sipua.ui.OneShotAlarm"/>
+		<receiver android:name="com.zed3.sipua.ui.MyHeartBeatReceiver"/>
+		<receiver android:name="com.zed3.power.ScreenWakeupActionReceiver"/>
+		<receiver android:name="com.zed3.sipua.ui.OneShotAlarm2"/>
+		<receiver android:name="com.zed3.sipua.ui.LoopAlarm"/>
+		<!--<receiver android:name="com.zed3.sipua.ui.OwnWifi"/>-->
+		<receiver android:name="com.zed3.sipua.ui.OneShotLocation"/>
+		<receiver android:name="com.zed3.sipua.ui.LoopLocation"/>
+		<receiver android:name="com.zed3.utils.BootBroadcastReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<receiver
+			android:name="com.zed3.sipua.ui.Receiver"
+			android:enabled="true">
+			<intent-filter>
+				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"/>
+				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_REPLACED"/>
+
+				<data android:scheme="package"/>
+				<data android:path="com.zed3.sipua"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.LOCALE_CHANGED"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="SettingLanguage"/>
+			</intent-filter>
+		</receiver>
+
+		<service android:name="com.zed3.sipua.ui.RegisterService"/>
+		<service android:name="com.zed3.video.SensorCheckService"/>
+		<service android:name=".ui.MicWakeUpService"/>
+		<service android:name="com.zed3.flow.FlowRefreshService">
+			<intent-filter>
+				<action android:name="com.zed3.flow.FlowRefreshService"/>
+			</intent-filter>
+		</service>
+		<service android:name="com.zed3.sipua.message.AlarmService"/>
+		<service android:name="com.zed3.utils.NetworkListenerService"/>
+
+		<activity
+			android:name=".ui.CallActivity"
+			android:configChanges="locale"
+			android:exported="true"
+			android:label="@string/app_name"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Animation.Translucent"/>
+		<activity
+			android:name=".ui.CallActivity2"
+			android:configChanges="locale|keyboardHidden|orientation|screenSize"
+			android:exported="true"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.customgroup.ContactActivity"
+			android:configChanges="locale|keyboardHidden|orientation|screenSize"
+			android:launchMode="singleInstance"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.bluetooth.ZMBluetoothControlActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name="com.zed3.bluetooth.ZMBluetoothSelectActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name=".message.MessageComposeActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name=".message.MessageDialogueActivity"
+			android:configChanges="locale|keyboardHidden|orientation|screenSize"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name=".ui.lowsdk.TalkBackNew"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name=".ui.lowsdk.SipdroidActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name=".ui.lowsdk.MessageActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name=".message.MessageToContact"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.settings.AboutActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.PinformationActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.sipua.ui.lowsdk.UserDetails"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.ChangePasswordActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name="com.zed3.settings.AdvancedChoice"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.AudioSetActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.GroupCallComingSetActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.GpsSetActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.settings.GisDisplayActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:windowSoftInputMode="stateUnchanged|stateHidden|stateAlwaysHidden|stateAlwaysVisible"/>
+		<activity
+			android:name=".ui.splash.SplashActivity"
+			android:configChanges="locale"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".ui.anta.AntaCallActivity2"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity
+			android:name=".ui.anta.InviteContactActivity"
+			android:configChanges="locale"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity
+			android:name=".baiduMap.LocationOverlayDemo"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name=".baiduMap.JsLocationOverlay"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.sipua.message.MmsMessageDetailActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+		<activity
+			android:name="com.zed3.sipua.message.PhotoTransferReceiveActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"/>
+		<activity
+			android:name="com.zed3.sipua.ui.lowsdk.SelectPersonsActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Black.NoTitleBar"
+			android:windowSoftInputMode="stateHidden|stateAlwaysHidden"/>
+		<activity
+			android:name="com.zed3.sipua.ui.lowsdk.TempGrpCallActivity"
+			android:configChanges="locale|keyboardHidden|orientation"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Black.NoTitleBar"/>
+		<activity
+			android:name="com.zed3.broadcastptt.SettingsBroadcastActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Light.NoTitleBar"
+			android:windowSoftInputMode="adjustPan|adjustNothing"/>
+
 	</application>
 
 </manifest>

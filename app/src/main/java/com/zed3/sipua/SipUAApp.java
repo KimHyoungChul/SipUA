@@ -6,11 +6,13 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
+import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Handler;
 import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -40,12 +42,10 @@ import com.zed3.sipua.ui.lowsdk.GroupListUtil;
 import com.zed3.sipua.ui.lowsdk.TalkBackNew;
 import com.zed3.sipua.welcome.AutoConfigManager;
 import com.zed3.sipua.welcome.DeviceInfo;
-import com.zed3.utils.LanguageChange;
 import com.zed3.utils.LogUtil;
 import com.zed3.utils.NetChangedReceiver;
 import com.zed3.utils.Tools;
 import com.zed3.video.DeviceVideoInfo;
-import com.zed3.video.PhoneSupportTest;
 import com.zed3.video.VideoManagerService;
 
 import java.io.BufferedReader;
@@ -58,58 +58,44 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class SipUAApp extends Application {
-	static final String PROCESS_BAIDU_SERVICE = "com.zed3.sipua:remote";
+	public static final String PROCESS_BAIDU_SERVICE = "com.zed3.sipua:remote";
 	public static final int databases_Maximum = 2000;
-	public static GPSInfoDataBase gpsDB;
+	public static GPSInfoDataBase gpsDB = null;
 	public static boolean isDepartmentActivity = false;
 	public static volatile boolean isHeadsetConnected = false;
-	public static boolean isfirst_login = false;
+	public static boolean isfirst_login = true;
 	public static boolean isone_hour = false;
-	public static long lastHeadsetConnectTime = 0L;
-	public static Context mContext;
-	private static SipUAApp mInstance;
-	public static final long one_hour = 3600000L;
-	private static ThreadPoolExecutor pool;
-	private static final Handler sMainThreadHandler;
+	public static long lastHeadsetConnectTime = 0;
+	public static Context mContext = null;
+	public static final long one_hour = 3600000;
+	public static boolean updateNextTime = false;
+
+	private static SipUAApp mInstance = null;
+	private static ThreadPoolExecutor pool = null;
+	private static final Handler sMainThreadHandler = new Handler();
 	private static final String tag = "SipUAApp";
-	public static boolean updateNextTime;
-	AlarmManager alarmManager;
+
+	AlarmManager alarmManager = null;
 	SQLiteDatabase db;
-	public BMapManager mBMapManager;
+	public BMapManager mBMapManager = null;
 	private volatile MyHandlerThread mHandlerThread;
-	PendingIntent pi;
+	PendingIntent pi = null;
 	private PowerManager powerManager;
 	private SharedPreferences settings;
-	public final String strKey;
-	private PowerManager.WakeLock wakeLock;
-
-	static {
-		SipUAApp.isDepartmentActivity = false;
-		SipUAApp.updateNextTime = false;
-		SipUAApp.isfirst_login = true;
-		SipUAApp.isone_hour = false;
-		sMainThreadHandler = new Handler();
-		SipUAApp.mInstance = null;
-	}
-
-	public SipUAApp() {
-		this.mBMapManager = null;
-		this.strKey = "hQzXk2qgLE193GnFd1S5NQi7";
-		this.alarmManager = null;
-		this.pi = null;
-	}
+	public final String strKey = "hQzXk2qgLE193GnFd1S5NQi7";
+	private WakeLock wakeLock;
 
 	public static void exit() {
 		LogUtil.makeLog("SipUAApp", "exit()");
 		TipSoundPlayer.getInstance().exit();
-		MyAlarmManager.getInstance().exit(SipUAApp.mContext);
-		MyPowerManager.getInstance().exit(SipUAApp.mContext);
+		MyAlarmManager.getInstance().exit(mContext);
+		MyPowerManager.getInstance().exit(mContext);
 		if (Settings.mNeedBlueTooth && ZMBluetoothManager.getInstance() != null) {
-			ZMBluetoothManager.getInstance().exit(SipUAApp.mContext);
+			ZMBluetoothManager.getInstance().exit(mContext);
 		}
 		NetChangedReceiver.unregisterSelf();
-		HeadsetPlugReceiver.stopReceive(SipUAApp.mContext);
-		ZMBluetoothManager.getInstance().unregisterReceivers(SipUAApp.mContext);
+		HeadsetPlugReceiver.stopReceive(mContext);
+		ZMBluetoothManager.getInstance().unregisterReceivers(mContext);
 		AudioUtil.getInstance().exit();
 	}
 
@@ -125,7 +111,7 @@ public class SipUAApp extends Application {
 	}
 
 	public static boolean getIsClosed() {
-		final SharedPreferences settings = getInstance().getSettings();
+		SharedPreferences settings = getInstance().getSettings();
 		return settings != null && settings.getBoolean("logOnOffKey", false);
 	}
 
@@ -138,88 +124,86 @@ public class SipUAApp extends Application {
 	}
 
 	public static Handler getMainThreadHandler() {
-		return SipUAApp.sMainThreadHandler;
+		return sMainThreadHandler;
+	}
+
+	public static String getVersion() {
+		return getVersion(mContext);
+	}
+
+	public static String getVersion(final Context context) {
+		String unknown = "Unknown";
+		if (context == null) {
+			return "Unknown";
+		}
+		try {
+			String ret = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+			if (ret.contains(" + ")) {
+				return ret.substring(0, ret.indexOf(" + ")) + "b";
+			}
+			return ret;
+		} catch (NameNotFoundException e) {
+			return "Unknown";
+		}
+	}
+
+	private void init() {
+		ZMBluetoothManager.getInstance().registerReceivers(mContext);
+	}
+
+	private boolean initBluetoothOnOff() {
+		return Settings.mNeedBlueTooth = settings.getBoolean(Settings.PREF_BLUETOOTH_ONOFF, false);
+	}
+
+	private void initPTime() {
+		String ptime = settings.getString(Settings.PTIME_MODE, Settings.DEFAULT_PTIME_MODE);
+		if (!TextUtils.isEmpty(ptime) && TextUtils.isDigitsOnly(ptime) && ptime.length() < 4) {
+			SettingsInfo.ptime = Integer.parseInt(ptime);
+		}
+	}
+
+	private boolean initVideoOnOff() {
+		return !settings.getString(Settings.PREF_VIDEOCALL_ONOFF, "1").equals("0");
 	}
 
 	public static ThreadPoolExecutor getTHreadPool() {
-		if (SipUAApp.pool == null) {
-			SipUAApp.pool = new ThreadPoolExecutor(10, Integer.MAX_VALUE, 500L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new RejectedExecutionHandler() {
+		if (pool == null) {
+			pool = new ThreadPoolExecutor(10, Integer.MAX_VALUE, 500L, TimeUnit.SECONDS,
+					new SynchronousQueue<Runnable>(), new RejectedExecutionHandler() {
 				@Override
-				public void rejectedExecution(final Runnable runnable, final ThreadPoolExecutor threadPoolExecutor) {
+				public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
 					threadPoolExecutor.setMaximumPoolSize(threadPoolExecutor.getMaximumPoolSize() + 2);
 					threadPoolExecutor.execute(runnable);
 				}
 			});
 		}
-		return SipUAApp.pool;
+		return pool;
 	}
 
-	public static String getVersion() {
-		return getVersion(SipUAApp.mContext);
-	}
-
-	public static String getVersion(final Context context) {
-		String versionName;
+	public static void on(Context context, boolean on) {
 		if (context == null) {
-			versionName = "Unknown";
-		} else {
-			try {
-				final String s = versionName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
-				if (s.contains(" + ")) {
-					return String.valueOf(s.substring(0, s.indexOf(" + "))) + "b";
-				}
-			} catch (PackageManager.NameNotFoundException ex) {
-				return "Unknown";
-			}
+			context = mContext;
 		}
-		return versionName;
-	}
-
-	private void init() {
-		ZMBluetoothManager.getInstance().registerReceivers(SipUAApp.mContext);
-	}
-
-	private boolean initBluetoothOnOff() {
-		return Settings.mNeedBlueTooth = this.settings.getBoolean("bluetoothonoff", false);
-	}
-
-	private void initPTime() {
-		final String string = this.settings.getString("ptime", "20");
-		if (!TextUtils.isEmpty((CharSequence) string) && TextUtils.isDigitsOnly((CharSequence) string) && string.length() < 4) {
-			SettingsInfo.ptime = Integer.parseInt(string);
-		}
-	}
-
-	private boolean initVideoOnOff() {
-		return !this.settings.getString("videoCallKey", "1").equals("0");
-	}
-
-	public static void on(final Context context, final boolean b) {
-		Context mContext = context;
-		if (context == null) {
-			mContext = SipUAApp.mContext;
-		}
-		final SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(mContext).edit();
-		edit.putBoolean("on", b);
+		Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+		edit.putBoolean(Settings.PREF_ON, on);
 		edit.commit();
-		if (b) {
+		if (on) {
 			Receiver.engine(mContext).isRegistered();
 		}
 	}
 
-	public static boolean on(final Context context) {
-		Context mContext = context;
+	public static boolean on(Context context) {
 		if (context == null) {
-			mContext = SipUAApp.mContext;
+			context = mContext;
 		}
-		return Boolean.valueOf(PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("on", false));
+		return Boolean.valueOf(PreferenceManager.getDefaultSharedPreferences(context).getBoolean(Settings.PREF_ON, false)).booleanValue();
 	}
 
 	public static void restoreVoice() {
 		AudioUtil.getInstance().exit();
 	}
 
-	private void setmHandlerThread(final MyHandlerThread mHandlerThread) {
+	private void setmHandlerThread(MyHandlerThread mHandlerThread) {
 		synchronized (this) {
 			if (this.mHandlerThread == null) {
 				(this.mHandlerThread = mHandlerThread).start();
@@ -227,7 +211,7 @@ public class SipUAApp extends Application {
 		}
 	}
 
-	public static void startHomeActivity(final Context context) {
+	public static void startHomeActivity(Context context) {
 		final Intent intent = new Intent("android.intent.action.MAIN");
 		intent.addCategory("android.intent.category.HOME");
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -235,29 +219,25 @@ public class SipUAApp extends Application {
 	}
 
 	public void appLogout() {
-		final UserAgent getCurUA = Receiver.GetCurUA();
-		if (getCurUA.GetCurGrp() != null) {
-			getCurUA.grouphangup(getCurUA.GetCurGrp());
+		UserAgent user = Receiver.GetCurUA();
+		if (user.GetCurGrp() != null) {
+			user.grouphangup(user.GetCurGrp());
 		}
 		TalkBackNew.getInstance().unregisterPttGroupChangedReceiver();
 		Tools.cleanGrpID();
 		Tools.onPreLogOut();
 		Receiver.engine(null).expire(-1);
 		Receiver.onText(3, null, 0, 0L);
-		SipUAApp.mContext.getSharedPreferences("notifyInfo", 0).edit().clear().commit();
-		while (true) {
-			try {
-				Thread.sleep(800L);
-				Receiver.engine(null).halt();
-				DeviceInfo.ISAlarmShowing = false;
-				Receiver.alarm(0, OneShotAlarm.class);
-				Receiver.alarm(0, MyHeartBeatReceiver.class);
-			} catch (InterruptedException ex) {
-				ex.printStackTrace();
-				continue;
-			}
-			break;
+		mContext.getSharedPreferences("notifyInfo", 0).edit().clear().commit();
+		try {
+			Thread.sleep(800);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+		Receiver.engine(null).halt();
+		DeviceInfo.ISAlarmShowing = false;
+		Receiver.alarm(0, OneShotAlarm.class);
+		Receiver.alarm(0, MyHeartBeatReceiver.class);
 	}
 
 	private String getProcessName() {
@@ -274,26 +254,30 @@ public class SipUAApp extends Application {
 	}
 
 	public SharedPreferences getSettings() {
-		return this.settings;
+		return settings;
 	}
 
 	public MyHandlerThread getmHandlerThread() {
-		return this.mHandlerThread;
+		return mHandlerThread;
 	}
 
 	public void onCreate() {
 		Log.e("Build.MODEL", Build.MODEL);
 		String processName = getProcessName();
-		mContext = (Context) this;
+		mContext = this;
 
 		if (!TextUtils.isEmpty(processName) && processName.equals(PROCESS_BAIDU_SERVICE)) {
 			Log.i("testapp", "SipUAApp#onCreate enter process name = " + processName + " return");
-			LogUtil.makeLog("SipUAApp", "onCreate() processName com.zed3.sipua:remote");
+			LogUtil.makeLog("SipUAApp", "onCreate() processName " + PROCESS_BAIDU_SERVICE);
 			return;
 		}
+
 		LogUtil.makeLog(tag, "onCreate()");
 		Thread.setDefaultUncaughtExceptionHandler(MyUncaughtExceptionHandler.getInstance(getApplicationContext()));
-		LanguageChange.upDateLanguage(mContext);
+		// 更新语言
+//		LanguageChange.upDateLanguage(mContext);
+
+		// GPS信息
 		MemoryMg.getInstance().GpsLocationModel = PreferenceManager.getDefaultSharedPreferences(this).getInt(Settings.PREF_LOCATEMODE, 3);
 		MemoryMg.getInstance().GpsLocationModel_EN = PreferenceManager.getDefaultSharedPreferences(this).getInt(Settings.PREF_LOCATEMODE_EN, 3);
 		try {
@@ -302,7 +286,7 @@ public class SipUAApp extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		this.settings = getSharedPreferences("com.zed3.sipua_preferences", Context.MODE_PRIVATE);
+		settings = getSharedPreferences("com.zed3.sipua_preferences", Context.MODE_PRIVATE);
 		DeviceVideoInfo.supportRotate = this.settings.getBoolean(DeviceVideoInfo.VIDEO_SUPPORT_ROTATE, false);
 		DeviceVideoInfo.supportFullScreen = this.settings.getBoolean(DeviceVideoInfo.VIDEO_SUPPORT_FULLSCREEN, false);
 		DeviceVideoInfo.isHorizontal = this.settings.getBoolean(DeviceVideoInfo.VIDEO_SUPPORT_LAND, false);
@@ -355,9 +339,12 @@ public class SipUAApp extends Application {
 //		}
 //		this.mBMapManager.init(new MyGeneralListener());
 		mInstance = this;
-		if (Build.VERSION.SDK_INT >= 16) {
-			DeviceInfo.isSupportHWChange = new PhoneSupportTest().startTest();
-		}
+
+		// 测试
+//		if (Build.VERSION.SDK_INT >= 16) {
+//			DeviceInfo.isSupportHWChange = new PhoneSupportTest().startTest();
+//		}
+
 		MyHeartBeatReceiver.MyHeartBeatMessageHandler.createInstance();
 		this.powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		this.wakeLock = this.powerManager.newWakeLock(26, "WAKE_LOCK");

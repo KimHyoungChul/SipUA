@@ -72,7 +72,6 @@ import com.zed3.zhejiang.ZhejiangReceivier;
 
 import org.zoolu.tools.GroupListInfo;
 
-import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -417,15 +416,16 @@ public class ContactActivity extends BaseActivity implements OnClickListener, On
 			this.childPosition = position;
 		}
 
-		public void onClick(View v) {
-			Intent intentToGrpInfoList = new Intent(ContactActivity.this.mContext, GroupMemberListAcitivity.class);
-			String currentGrpName = ((TextView) v.findViewById(R.id.grp_name)).getText().toString().trim();
+		public void onClick(View view) {
+			Intent intent = new Intent(ContactActivity.this.mContext, GroupMemberListAcitivity.class);
+			String currentGrpName = ((TextView) view.findViewById(R.id.grp_name)).getText().toString().trim();
 			Bundle bundle = new Bundle();
 			bundle.putString("grp_name", currentGrpName);
 			bundle.putString("grp_type", "permanent");
-			bundle.putSerializable("permanent_member_info", (Serializable) ContactActivity.this.permanentGrpMap.get((String) ((Map) ContactActivity.this.permanentGrpData.get(this.childPosition)).get("curGrp_ID")));
-			intentToGrpInfoList.putExtras(bundle);
-			ContactActivity.this.startActivity(intentToGrpInfoList);
+			bundle.putSerializable("permanent_member_info", ContactActivity.this.permanentGrpMap.get(
+					(ContactActivity.this.permanentGrpData.get(this.childPosition)).get("curGrp_ID")));
+			intent.putExtras(bundle);
+			ContactActivity.this.startActivity(intent);
 		}
 	}
 
